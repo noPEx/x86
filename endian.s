@@ -6,7 +6,7 @@
 .section .data
 
 data_items:							#These are the data items
-	.long 259,67,222,45,75,54,34,44,33,22,11,66,0
+	.long 226,67,222,45,75,54,34,44,33,22,11,66,0
 
 .section .text
 .globl _start
@@ -14,7 +14,8 @@ data_items:							#These are the data items
 _start :
 	movl $0,%edi
 	movl data_items(,%edi,1), %ebx
+	#movl $222, %ebx
 	incl %edi
-	movl data_items(,%edi,1), %ebx
+	#movl data_items(,%edi,1), %ebx
 	movl $1,%eax
 	int $0x80
